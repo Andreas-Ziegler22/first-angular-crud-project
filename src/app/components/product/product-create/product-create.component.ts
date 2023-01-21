@@ -10,8 +10,8 @@ import { Router } from "@angular/router";
 })
 export class ProductCreateComponent {
   product: Product = {
-    name: "product-test",
-    price: 199.99,
+    name: "",
+    price: null,
   };
 
   constructor(private productService: ProductService, private router: Router) {}
