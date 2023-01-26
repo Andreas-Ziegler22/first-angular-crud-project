@@ -1,4 +1,4 @@
-import { Product } from "../product.model";
+import { Product } from "./../product.model";
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
@@ -17,7 +17,7 @@ export class ProductRead2Component implements AfterViewInit {
   dataSource: ProductRead2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ["id", "name"];
+  displayedColumns = ["id", "name", "price"];
 
   constructor() {
     this.dataSource = new ProductRead2DataSource();
