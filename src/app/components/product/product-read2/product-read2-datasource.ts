@@ -102,7 +102,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
         case "name":
           return compare(a.name, b.name, isAsc);
         case "id":
-          return compare(+a.id, +b.id, isAsc);
+          return compare(+a.id!, +b.id!, isAsc);
         default:
           return 0;
       }
