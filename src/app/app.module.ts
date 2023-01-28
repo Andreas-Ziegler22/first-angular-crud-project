@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, LOCALE_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -27,11 +27,16 @@ import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 
 import { MatInputModule } from "@angular/material/input";
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { ProductReadComponent } from "./components/product/product-read/product-read.component";
+import { ProductRead2Component } from "./components/product/product-read2/product-read2.component";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+
+import localeDe from "@angular/common/locales/de";
+import { registerLocaleData } from "@angular/common";
+
+registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
@@ -66,7 +71,12 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: "de-DE",
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
