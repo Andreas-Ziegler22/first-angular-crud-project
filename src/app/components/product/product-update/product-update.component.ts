@@ -22,7 +22,13 @@ export class ProductUpdateComponent {
     });
   }
 
-  updateProduct(): void {}
+  updateProduct(): void {
+    this.productService.update(this.product).subscribe(() => {
+      this.productService.showMessage("this product is updated");
+      this.router.navigate(["/products"]);
+    });
+  }
+
   cancel(): void {
     this.router.navigate(["/products"]);
   }
