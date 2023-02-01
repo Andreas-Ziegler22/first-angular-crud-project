@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-product-delete',
-  templateUrl: './product-delete.component.html',
-  styleUrls: ['./product-delete.component.css']
+  selector: "app-product-delete",
+  templateUrl: "./product-delete.component.html",
+  styleUrls: ["./product-delete.component.css"],
 })
 export class ProductDeleteComponent {
+  deleteProduct(): void {}
 
+  cancel(): void {}
 }
