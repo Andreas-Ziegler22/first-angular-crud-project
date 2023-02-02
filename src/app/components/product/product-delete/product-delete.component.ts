@@ -1,3 +1,4 @@
+import { Router } from "@angular/router";
 import { ProductService } from "./../product.service";
 import { Product } from "./../product.model";
 import { Component } from "@angular/core";
@@ -10,7 +11,7 @@ import { Component } from "@angular/core";
 export class ProductDeleteComponent {
   product: Product;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private router: Router) {
     const id = "1";
     this.productService.readById(id).subscribe((product) => {
       this.product = product;
@@ -19,5 +20,7 @@ export class ProductDeleteComponent {
 
   deleteProduct(): void {}
 
-  cancel(): void {}
+  cancel(): void {
+    this.router.navigate(["/products"]);
+  }
 }
