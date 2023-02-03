@@ -17,6 +17,7 @@ export class ProductService {
       duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
+      panelClass: ["msg-success"],
     });
   }
   create(product: Product): Observable<Product> {
