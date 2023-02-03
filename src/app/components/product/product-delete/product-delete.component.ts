@@ -1,4 +1,4 @@
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService } from "./../product.service";
 import { Product } from "./../product.model";
 import { Component } from "@angular/core";
@@ -11,9 +11,13 @@ import { Component } from "@angular/core";
 export class ProductDeleteComponent {
   product: Product;
 
-  constructor(private productService: ProductService, private router: Router) {
-    const id = "1";
-    this.productService.readById(id).subscribe((product) => {
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    const id = this.route.snapshot.paramMap.get("id");
+    this.productService.readById({ id }).subscribe((product) => {
       this.product = product;
     });
   }
