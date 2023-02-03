@@ -18,7 +18,12 @@ export class ProductDeleteComponent {
     });
   }
 
-  deleteProduct(): void {}
+  deleteProduct(): void {
+    this.productService.delete(this.product.id).subscribe(() => {
+      this.productService.showMessage("product deleted");
+      this.router.navigate(["/products"]);
+    });
+  }
 
   cancel(): void {
     this.router.navigate(["/products"]);
