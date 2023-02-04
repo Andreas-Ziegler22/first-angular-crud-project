@@ -7,14 +7,14 @@ import { BehaviorSubject } from "rxjs";
 })
 export class HeaderService {
   private _headerData = new BehaviorSubject<HeaderData>({
-    title: "Home",
+    title: "Test",
     icon: "home",
     routeUrl: "",
   });
 
   constructor() {}
 
-  get HeaderData(): HeaderData {
+  get headerData(): HeaderData {
     return this._headerData.value;
   }
   set headerData(headerData: HeaderData) {
