@@ -1,3 +1,4 @@
+import { HeaderService } from "./../../components/template/header/header.service";
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
@@ -7,7 +8,13 @@ import { Router } from "@angular/router";
   styleUrls: ["./product-crud.component.css"],
 })
 export class ProductCrudComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, headerService: HeaderService) {
+    headerService.headerData = {
+      title: "product registration",
+      icon: "storefront",
+      routeUrl: "/product",
+    };
+  }
   navigateToProductCreate(): void {
     this.router.navigate(["/products/create"]);
   }
